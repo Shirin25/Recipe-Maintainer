@@ -21,8 +21,32 @@ app.get("/",function(req,res){
 app.get("/register",function(req,res){
 	res.render("register")
 })
+
+app.get("/login",function(req,res){
+	res.render("login")
+})
 app.post('/login',function(req,res){
-	//
+	const email=req.body.email
+	const password=req.body.password
+
+	User.findOne({email:email},(err,foundResults) => {
+		if(err)
+		{
+			console.log("err")
+		}
+		else 
+		{
+			if(foundResults.password === password)
+			{
+				res.send("You have successfully logged in")
+			}
+			else
+			{
+				res.send("Incorrect Password or Email id!")
+			}
+		}
+	})
+
 })
 app.post('/register',function(req,res){
 	const email=req.body.email
