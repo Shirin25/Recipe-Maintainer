@@ -1,0 +1,21 @@
+<%- include("partials/header2") -%>
+<br>
+<br>
+<br>
+<form method="POST" action="/addRecipe">
+<div class="form-group">
+  <label >Recipe Title</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  <label >Ingredients</label>
+  <input type="text" cols="5" rows="5" class="form-control" id="pwd">
+</div>
+<div class="form-group">
+  <label for="comment">Procedure</label>
+  <textarea class="form-control" cols="5" rows="5" id="comment"></textarea>
+</div>
+<button class="btn btn-primary" type="submit" name="button">Add</button>
+</form>
+
+<%- include("partials/footer") -%>

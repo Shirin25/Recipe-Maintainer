@@ -25,6 +25,10 @@ app.get("/register",function(req,res){
 app.get("/login",function(req,res){
 	res.render("login")
 })
+
+app.get("/addRecipe",function(req,res){
+	res.render("addRecipe")
+})
 app.post('/login',function(req,res){
 	const email=req.body.email
 	const password=req.body.password
