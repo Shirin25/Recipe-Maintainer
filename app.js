@@ -55,6 +55,9 @@ app.post("/addRecipe",function(req,res){
 		procedure:procedure,
 		author:author
 	})
+	recipe.save(err=>{
+		err?console.log(err):res.render("allRecipes",{posts:posts})
+	})
 	posts.push(post)
 	res.redirect("allRecipes")
 })
