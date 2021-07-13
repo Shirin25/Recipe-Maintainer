@@ -2,6 +2,8 @@ const express= require('express')
 const app=express()
 const mongoose=require('mongoose')
 const User=require('./models/user')
+const Recipe=require('./models/recipe')
+
 const bodyParser = require("body-parser");
 
 mongoose.connect("mongodb://localhost:27017/userDB",{
@@ -36,12 +38,23 @@ app.get("/addRecipe",function(req,res){
 	
 })
 app.post("/addRecipe",function(req,res){
+
+	    const recipeTitle=req.body.RecipeTitle
+		const ingredients=req.body.Ingredients
+		const procedure=req.body.Procedure
+		const author=req.body.author
 	const post={
 		recipeTitle:req.body.RecipeTitle,
 		ingredients:req.body.Ingredients,
 		procedure:req.body.Procedure,
 		author:req.body.author
 	}
+	const recipe=new Recipe({
+		recipeTitle:recipeTitle,
+		ingredients:ingredients,
+		procedure:procedure,
+		author:author
+	})
 	posts.push(post)
 	res.redirect("allRecipes")
 })
