@@ -1,0 +1,38 @@
+<%- include("partials/header2") -%>
+<br>
+<br>
+<br>
+<br>
+
+<% posts.forEach(function(post){ %>
+
+	<div class='recipe-card'>
+  <div class="recipe-card__body">
+    <h1 class="recipe-card__heading"><%=post.recipeTitle %></h1>
+    <hr>
+    <ul class="recipe-card__nav">
+      <li>
+        <h3 class="active">Ingredients</h3>
+        <p><%=post.ingredients %></p>
+      </li>
+      <hr>
+      <li>
+        <h3>Method</h3>
+        <p><%=post.procedure %></p>
+      </li>
+      <li>
+      	<h3>Author</h3>
+        <p><%=post.author %></p>
+      </li>
+    </ul>
+  </div>
+</div>
+<%
+} )%>
+
+
+<br>
+<br>
+<br>
+<br>
+<%- include("partials/footer") -%>

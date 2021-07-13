@@ -2,20 +2,17 @@
 <br>
 <br>
 <br>
-<form method="POST" action="/addRecipe">
+<form method="post" action="/addRecipe">
 <div class="form-group">
-  <label >Recipe Title</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-<div class="form-group">
-  <label >Ingredients</label>
-  <input type="text" cols="5" rows="5" class="form-control" id="pwd">
-</div>
-<div class="form-group">
-  <label for="comment">Procedure</label>
-  <textarea class="form-control" cols="5" rows="5" id="comment"></textarea>
+<label>Recipe Title</label>
+<input class="form-control" type="text" name="RecipeTitle"></input>
+<label>Ingredients</label>
+<textarea class="form-control" name="Ingredients" rows="2" cols="5"></textarea>
+<label>Procedure</label>
+<textarea class="form-control" name="Procedure" rows="5" cols="5"></textarea>
+<label>Author</label>
+<input class="form-control" type="text" name="author"></input>
 </div>
 <button class="btn btn-primary" type="submit" name="button">Add</button>
 </form>
-
 <%- include("partials/footer") -%>

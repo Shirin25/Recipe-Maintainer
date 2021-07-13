@@ -11,6 +11,7 @@ mongoose.connect("mongodb://localhost:27017/userDB",{
     // useFindAndModify: false}
 })
 
+let posts=[]
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"))
@@ -25,9 +26,28 @@ app.get("/register",function(req,res){
 app.get("/login",function(req,res){
 	res.render("login")
 })
-
+app.get("/allRecipes",function(req,res){
+	res.render("allRecipes",{
+		posts:posts
+	})
+})
 app.get("/addRecipe",function(req,res){
 	res.render("addRecipe")
+	
+})
+app.post("/addRecipe",function(req,res){
+	const post={
+		recipeTitle:req.body.RecipeTitle,
+		ingredients:req.body.Ingredients,
+		procedure:req.body.Procedure,
+		author:req.body.author
+	}
+	posts.push(post)
+	res.redirect("allRecipes")
+})
+app.get("/logout",function(req,res)
+{
+	res.render("login")
 })
 app.post('/login',function(req,res){
 	const email=req.body.email
@@ -42,7 +62,8 @@ app.post('/login',function(req,res){
 		{
 			if(foundResults.password === password)
 			{
-				res.send("You have successfully logged in")
+				//res.send("You have successfully logged in")
+				res.redirect("allRecipes")
 			}
 			else
 			{
