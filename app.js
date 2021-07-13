@@ -5,9 +5,12 @@ const User=require('./models/user')
 const Recipe=require('./models/recipe')
 const port= process.env.PORT || 3000
 
+
+require('dotenv').config()
+
 const bodyParser = require("body-parser");
 
-mongoose.connect("mongodb+srv://shirinjlk:Shirin@250@cluster0.l5ri1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
+mongoose.connect(process.env.ATLAS_URL,{
 	useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
