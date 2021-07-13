@@ -7,7 +7,7 @@ const port= process.env.PORT || 3000
 
 const bodyParser = require("body-parser");
 
-mongoose.connect("mongodb://localhost:27017/userDB",{
+mongoose.connect("mongodb+srv://shirinjlk:Shirin@250@cluster0.l5ri1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
 	useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex: true,
