@@ -3,6 +3,7 @@ const app=express()
 const mongoose=require('mongoose')
 const User=require('./models/user')
 const Recipe=require('./models/recipe')
+const port= process.env.PORT || 3000
 
 const bodyParser = require("body-parser");
 
@@ -102,6 +103,6 @@ app.post('/register',function(req,res){
 		err?console.log(err):res.send("Successfully created User")
 	})
 })
-app.listen(3000,function(){
+app.listen(port,function(){
 	console.log('server started on port 3000')
 })
