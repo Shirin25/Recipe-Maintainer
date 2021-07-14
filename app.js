@@ -10,7 +10,7 @@ require('dotenv').config({ path: '.env' })
 
 const bodyParser = require("body-parser");
 
-mongoose.connect('mongodb+srv://shirinjlk:Shirin%40250@cluster0.l5ri1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect(process.env.ATLAS_URL,{
 	useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
