@@ -38,7 +38,7 @@ app.get("/allRecipes",function(req,res){
 	})
 })
 app.get("/addRecipe",function(req,res){
-	res.render("addRecipe")
+	res.render("addrecipe")
 	
 })
 app.post("/addRecipe",function(req,res){
