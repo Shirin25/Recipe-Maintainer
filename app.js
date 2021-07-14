@@ -6,7 +6,7 @@ const Recipe=require('./models/recipe')
 const port= process.env.PORT || 3000
 
 
-require('dotenv').config()
+require('dotenv').config({ path: '.env' })
 
 const bodyParser = require("body-parser");
 
